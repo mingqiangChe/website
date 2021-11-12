@@ -18,10 +18,10 @@ export default {
   }
 }
 </script>
-<style lang="less" scope>
-.el-card__body {
-  padding: 0px !important;
-}
+<style lang="less" scoped>
+// .el-card__body {
+//   padding: 0px !important;
+// }
 .home {
   margin: 0 auto;
   padding-top: 46px;

@@ -1,25 +1,25 @@
 <!-- 首页文章目录 -->
 <template>
   <div class="home">
-    <el-card class="main">
+    <el-card class="list_main">
       <div class="catalogue">
         <img src="@/assets/bookIcon.png" alt="">
         文章目录
       </div>
-      <div class="main-one">
+      <div class="main_one">
         <img src="@/assets/touIcon.png" alt="">
         个人介绍
       </div>
-      <div class="main-two">
+      <div class="main_two">
         项目案例
       </div>
-      <div class="main-three">
+      <div class="main_three">
         文章博客
       </div>
-      <div class="main-four">
+      <div class="main_four">
         个人感悟
       </div>
-      <div class="main-five">
+      <div class="main_five">
         联系
       </div>
     </el-card>
@@ -56,11 +56,11 @@ export default {
   activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
-<style lang='less' scoped>
+<style lang='less'>
 .el-card__body {
   padding: 0px !important;
 }
-.main {
+.list_main {
   z-index: 88;
   position: relative;
   width: 168px;
@@ -88,11 +88,11 @@ export default {
       box-sizing: border-box;
     }
   }
-  .main-one,
-  .main-two,
-  .main-three,
-  .main-four,
-  .main-five {
+  .main_one,
+  .main_two,
+  .main_three,
+  .main_four,
+  .main_five {
     width: 168px;
     font-size: 12px;
     text-align: left;
@@ -100,11 +100,11 @@ export default {
     box-sizing: border-box;
     cursor: pointer;
   }
-  .main-one:hover,
-  .main-two:hover,
-  .main-three:hover,
-  .main-four:hover,
-  .main-five:hover {
+  .main_one:hover,
+  .main_two:hover,
+  .main_three:hover,
+  .main_four:hover,
+  .main_five:hover {
     background-color: #fff5f5;
   }
   @keyframes icon {
