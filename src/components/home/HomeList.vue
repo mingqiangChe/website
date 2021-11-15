@@ -1,25 +1,29 @@
 <!-- 首页文章目录 -->
 <template>
   <div class="home">
-    <el-card class="list_main">
+    <el-card class="main">
       <div class="catalogue">
         <img src="@/assets/bookIcon.png" alt="">
         文章目录
       </div>
-      <div class="main_one">
+      <div class="main-one" @click="pushMyself">
         <img src="@/assets/touIcon.png" alt="">
         个人介绍
       </div>
-      <div class="main_two">
+      <div class="main-two" @click="pushCase">
+        <img src="@/assets/caseIcon.png" alt="">
         项目案例
       </div>
-      <div class="main_three">
+      <div class="main-three">
+        <img src="@/assets/blogIcon.png" alt="">
         文章博客
       </div>
-      <div class="main_four">
-        个人感悟
+      <div class="main-four">
+        <img src="@/assets/perceptionIcon.png" alt="">
+        个人体感
       </div>
-      <div class="main_five">
+      <div class="main-five">
+        <img src="@/assets/touIcon.png" alt="">
         联系
       </div>
     </el-card>
@@ -31,6 +35,7 @@
 //例如：import 《组件名称》 from '《组件路径》';
 
 export default {
+  name: 'HomeList',
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {
@@ -42,7 +47,14 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+    pushMyself() {
+      this.$router.push('myself')
+    },
+    pushCase(){
+      this.$router.push('case')
+    }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
@@ -56,14 +68,14 @@ export default {
   activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
-<style lang='less'>
+<style lang='less' scoped>
 .el-card__body {
   padding: 0px !important;
 }
-.list_main {
+.main {
   z-index: 88;
   position: relative;
-  width: 168px;
+  width: 306px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -74,37 +86,37 @@ export default {
   box-shadow: 2px 2px 10px #909090;
   overflow: hidden;
   .catalogue {
-    width: 168px;
+    width: 306px;
     box-sizing: border-box;
     padding: 5px 0 5px 8px;
-    font-size: 16px;
+    font-size: 34px;
     color: black;
     font-weight: bolder;
     text-align: left;
     background-color: #ededed;
     opacity: 0.8;
     img {
-      padding-top: 4px;
+      padding-top: 10px;
       box-sizing: border-box;
     }
   }
-  .main_one,
-  .main_two,
-  .main_three,
-  .main_four,
-  .main_five {
-    width: 168px;
-    font-size: 12px;
+  .main-one,
+  .main-two,
+  .main-three,
+  .main-four,
+  .main-five {
+    width: 306px;
+    font-size: 22px;
     text-align: left;
     padding: 8px 0 8px 8px;
     box-sizing: border-box;
     cursor: pointer;
   }
-  .main_one:hover,
-  .main_two:hover,
-  .main_three:hover,
-  .main_four:hover,
-  .main_five:hover {
+  .main-one:hover,
+  .main-two:hover,
+  .main-three:hover,
+  .main-four:hover,
+  .main-five:hover {
     background-color: #fff5f5;
   }
   @keyframes icon {

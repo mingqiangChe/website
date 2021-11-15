@@ -7,7 +7,7 @@
           用代码表达自我
         </div>
         <div class="canvasx">
-          <canvas id="myCanvas" width="100" height="100">
+          <canvas id="myCanvas" width="250" height="250">
           </canvas>
         </div>
         <div class="button" @click="openMark">
@@ -44,7 +44,7 @@ export default {
       var ctx = document.getElementById('myCanvas')
       var ctx = canvas.getContext('2d')
 
-      var image = new Image(120, 90)
+      var image = new Image(250, 250)
       image.onload = drawImageActualSize
       // image.src = this.imgSrc
       // image.src = 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
@@ -79,7 +79,7 @@ export default {
   activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
-<style lang='less'>
+<style lang='less' scoped>
 // 画布
 .canvasx {
   width: 50px;
@@ -103,23 +103,23 @@ export default {
     box-sizing: border-box;
     animation: icon 6s linear infinite;
     .txt {
-      width: 200px;
-      height: 40px;
-      // background-color: #fff;
+      width: 478px;
+      height: 156px;
       margin: 0 auto;
+      font-size: 66px;
       color: #fff;
       text-align: center;
-      line-height: 20px;
+      //  line-height: 20px;
     }
     .button {
-      font-size: 12px;
+      font-size: 48px;
       font-weight: 400;
       color: white;
       padding: 4px 6px;
       box-sizing: border-box;
       text-align: center;
-      border-radius: 20px;
-      width: 50px;
+      border-radius: 74px;
+      width: 172px;
       margin: 0 auto;
       background-color: rgba(255, 255, 255, 0.3);
       cursor: pointer;
