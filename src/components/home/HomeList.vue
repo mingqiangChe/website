@@ -4,7 +4,7 @@
     <el-card class="main">
       <div class="catalogue">
         <img src="@/assets/bookIcon.png" alt="">
-        文章目录
+        序列
       </div>
       <div class="main-one" @click="pushMyself">
         <img src="@/assets/touIcon.png" alt="">
@@ -20,9 +20,9 @@
       </div>
       <div class="main-four">
         <img src="@/assets/perceptionIcon.png" alt="">
-        个人体感
+        本本记录
       </div>
-      <div class="main-five">
+      <div class="main-five" @click="pushContact">
         <img src="@/assets/touIcon.png" alt="">
         联系
       </div>
@@ -51,8 +51,11 @@ export default {
     pushMyself() {
       this.$router.push('myself')
     },
-    pushCase(){
+    pushCase() {
       this.$router.push('case')
+    },
+    pushContact() {
+      this.$router.push('contact')
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）

@@ -18,8 +18,11 @@
           <canvas id="myCanvas" width="250" height="250">
           </canvas>
         </div> -->
-        <div class="button txtt" @click="openMark">
+        <!-- <div class="button txtt"  @click="openMark">
           start
+        </div> -->
+        <div class="butt" @click="openMark">
+          <btn :title="title"></btn>
         </div>
       </div>
     </div>
@@ -29,15 +32,17 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+const btn = () => import('@/components/utils/Button.vue')
 let canvas
 let ctx
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: { btn },
   data() {
     //这里存放数据
     return {
       // imgSrc: 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
+      title: 'start'
     }
   },
   //监听属性 类似于data概念
@@ -245,6 +250,15 @@ export default {
       margin-top: 200px;
       background-color: rgba(255, 255, 255, 0.3);
       cursor: pointer;
+    }
+    .butt {
+      position: absolute;
+      top: 186%;
+      left: 50%;
+      transform: translateX(-50%);
+      // width: 500 px;
+      // height: 200 px;
+      // margin: 0 auto;
     }
   }
 }
