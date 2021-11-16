@@ -1,17 +1,25 @@
 <!-- 登录界面 定时遮罩层 -->
 <template>
   <div class='login' ref="loginDom">
+    <ul class="bg-bubbles">
+      <li v-for="i in 10" :key="i"></li>
+    </ul>
     <div class="login-main">
       <div class="canvas">
-        <div class="txt">
+        <!-- <div class="txt">
           用代码表达自我
+        </div> -->
+        <div class="text-magic" data-word="Express yourself in code">
+          Express yourself in code
+          <div class="white"></div>
         </div>
-        <div class="canvasx">
+
+        <!-- <div class="canvasx">
           <canvas id="myCanvas" width="250" height="250">
           </canvas>
-        </div>
-        <div class="button" @click="openMark">
-          开启
+        </div> -->
+        <div class="button txtt" @click="openMark">
+          start
         </div>
       </div>
     </div>
@@ -38,24 +46,24 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    initCanvas() {
-      console.log('初始化canvas')
-      canvas = document.getElementById('myCanvas')
-      var ctx = document.getElementById('myCanvas')
-      var ctx = canvas.getContext('2d')
+    // initCanvas() {
+    //   console.log('初始化canvas')
+    //   canvas = document.getElementById('myCanvas')
+    //   var ctx = document.getElementById('myCanvas')
+    //   var ctx = canvas.getContext('2d')
 
-      var image = new Image(250, 250)
-      image.onload = drawImageActualSize
-      // image.src = this.imgSrc
-      // image.src = 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
-      image.src = '@/assets/logo.png'
+    //   var image = new Image(250, 250)
+    //   image.onload = drawImageActualSize
+    //   // image.src = this.imgSrc
+    //   // image.src = 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
+    //   image.src = '@/assets/header.jpg'
 
-      function drawImageActualSize() {
-        canvas.width = this.naturalWidth
-        canvas.height = this.naturalHeight
-        ctx.drawImage(this, 0, 0, this.naturalWidth, this.naturalHeight)
-      }
-    },
+    //   function drawImageActualSize() {
+    //     canvas.width = this.naturalWidth
+    //     canvas.height = this.naturalHeight
+    //     ctx.drawImage(this, 0, 0, this.naturalWidth, this.naturalHeight)
+    //   }
+    // },
     openMark() {
       this.$refs.loginDom.style.top = '-1000px'
     }
@@ -64,11 +72,11 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-    this.initCanvas()
+    // this.initCanvas()
     // 当调整窗口大小时重绘canvas
-    window.onresize = () => {
-      this.initCanvas()
-    }
+    // window.onresize = () => {
+    //   this.initCanvas()
+    // }
   },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
@@ -82,7 +90,7 @@ export default {
 <style lang='less' scoped>
 // 画布
 .canvasx {
-  width: 50px;
+  width: 450px;
   margin: 0 auto;
 }
 #mycanvas {
@@ -91,7 +99,8 @@ export default {
 .login {
   width: 100%;
   height: 100%;
-  background-color: #87e3e6;
+  // background-color: #87e3e6;
+  background: linear-gradient(to bottom right, #000, #000);
   position: absolute;
   top: 0;
   left: 0;
@@ -99,20 +108,132 @@ export default {
   .login-main {
     width: 100%;
     min-width: 780px;
-    padding-top: 110px;
+    padding-top: 300px;
     box-sizing: border-box;
     animation: icon 6s linear infinite;
     .txt {
-      width: 478px;
-      height: 156px;
-      margin: 0 auto;
-      font-size: 66px;
+      // margin: 50px auto;
+      // font-size: 54px;
+      // font-weight: bold;
+      // text-align: center;
+      // text-transform: uppercase;
+      // color: transparent;
+      // background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+      // background-size: cover;
+      // background-position: center center;
+      // -webkit-background-clip: text;
+      // animation: huerotate 3s infinite;
+    }
+    @keyframes huerotate {
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+    .text-magic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(2.4);
+      width: 440px;
+      font-size: 36px;
+      font-family: Raleway, Verdana, Arial;
       color: #fff;
-      text-align: center;
-      //  line-height: 20px;
+    }
+    .white {
+      position: absolute;
+      left: -10px;
+      width: 100%;
+      height: 3px;
+      background: #000;
+      z-index: 4;
+      animation: whiteMove 3s ease-out infinite;
+    }
+
+    .text-magic::before {
+      content: attr(data-word);
+      position: absolute;
+      top: 0;
+      left: 0.5px;
+      height: 0px;
+      color: rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+      z-index: 2;
+      animation: redShadow 1s ease-in infinite;
+      filter: contrast(200%);
+      text-shadow: 1px 0 0 red;
+    }
+
+    .text-magic::after {
+      content: attr(data-word);
+      position: absolute;
+      top: 0;
+      left: -2px;
+      height: 36px;
+      color: rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.9);
+      animation: redHeight 1.5s ease-out infinite;
+      filter: contrast(200%);
+      text-shadow: -1px 0 0 cyan;
+      mix-blend-mode: darken;
+    }
+
+    @keyframes redShadow {
+      20% {
+        height: 32px;
+      }
+      60% {
+        height: 6px;
+      }
+      100% {
+        height: 42px;
+      }
+    }
+
+    @keyframes redHeight {
+      20% {
+        height: 42px;
+      }
+      35% {
+        height: 12px;
+      }
+      50% {
+        height: 40px;
+      }
+      60% {
+        height: 20px;
+      }
+      70% {
+        height: 34px;
+      }
+      80% {
+        height: 22px;
+      }
+      100% {
+        height: 0px;
+      }
+    }
+
+    @keyframes whiteMove {
+      8% {
+        top: 38px;
+      }
+      14% {
+        top: 8px;
+      }
+      20% {
+        top: 42px;
+      }
+      32% {
+        top: 2px;
+      }
+      99% {
+        top: 30px;
+      }
     }
     .button {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 400;
       color: white;
       padding: 4px 6px;
@@ -121,6 +242,7 @@ export default {
       border-radius: 74px;
       width: 172px;
       margin: 0 auto;
+      margin-top: 200px;
       background-color: rgba(255, 255, 255, 0.3);
       cursor: pointer;
     }
@@ -138,6 +260,107 @@ export default {
   100% {
     // opacity: 1;
     transform: translate(0, 0);
+  }
+}
+.bg-bubbles {
+  position: absolute;
+  // 使气泡背景充满整个屏幕；
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // 如果元素内容超出给定的宽度和高度，overflow 属性可以确定是否显示滚动条等行为；
+  overflow: hidden;
+  li {
+    position: absolute;
+    // bottom 的设置是为了营造出气泡从页面底部冒出的效果；
+    bottom: -160px;
+    // 默认的气泡大小；
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    list-style: none;
+    // 使用自定义动画使气泡渐现、上升和翻滚；
+    animation: square 15s infinite;
+    transition-timing-function: linear;
+    // 分别设置每个气泡不同的位置、大小、透明度和速度，以显得有层次感；
+    &:nth-child(1) {
+      left: 10%;
+    }
+    &:nth-child(2) {
+      left: 20%;
+      width: 90px;
+      height: 90px;
+      animation-delay: 2s;
+      animation-duration: 7s;
+    }
+    &:nth-child(3) {
+      left: 25%;
+      animation-delay: 4s;
+    }
+    &:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-duration: 8s;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:nth-child(5) {
+      left: 70%;
+    }
+    &:nth-child(6) {
+      left: 80%;
+      width: 120px;
+      height: 120px;
+      animation-delay: 3s;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    &:nth-child(7) {
+      left: 32%;
+      width: 160px;
+      height: 160px;
+      animation-delay: 2s;
+    }
+    &:nth-child(8) {
+      left: 55%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+      animation-duration: 15s;
+    }
+    &:nth-child(9) {
+      left: 25%;
+      width: 10px;
+      height: 10px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:nth-child(10) {
+      left: 85%;
+      width: 160px;
+      height: 160px;
+      animation-delay: 5s;
+    }
+  }
+  // 自定义 square 动画；
+  @keyframes square {
+    0% {
+      opacity: 0.5;
+      transform: translateY(0px) rotate(45deg);
+    }
+    25% {
+      opacity: 0.75;
+      transform: translateY(-400px) rotate(90deg);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-600px) rotate(135deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-1000px) rotate(180deg);
+    }
   }
 }
 </style>

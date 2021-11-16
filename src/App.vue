@@ -11,7 +11,7 @@
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
-  background-color: rebeccapurple;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 * {
   margin: 0;
