@@ -42,7 +42,7 @@ export default {
     //这里存放数据
     return {
       // imgSrc: 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
-      title: 'start'
+      title: 'start',
     }
   },
   //监听属性 类似于data概念
@@ -51,38 +51,14 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    // initCanvas() {
-    //   console.log('初始化canvas')
-    //   canvas = document.getElementById('myCanvas')
-    //   var ctx = document.getElementById('myCanvas')
-    //   var ctx = canvas.getContext('2d')
-
-    //   var image = new Image(250, 250)
-    //   image.onload = drawImageActualSize
-    //   // image.src = this.imgSrc
-    //   // image.src = 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
-    //   image.src = '@/assets/header.jpg'
-
-    //   function drawImageActualSize() {
-    //     canvas.width = this.naturalWidth
-    //     canvas.height = this.naturalHeight
-    //     ctx.drawImage(this, 0, 0, this.naturalWidth, this.naturalHeight)
-    //   }
-    // },
     openMark() {
-      this.$refs.loginDom.style.top = '-1000px'
+      this.$store.commit('changeLoginStatus')
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {
-    // this.initCanvas()
-    // 当调整窗口大小时重绘canvas
-    // window.onresize = () => {
-    //   this.initCanvas()
-    // }
-  },
+  mounted() {},
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前

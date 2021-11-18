@@ -1,7 +1,18 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2021-11-16 16:21:07
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2021-11-18 15:33:40
+-->
 <template>
   <div class="home">
-    <login></login>
+    <login v-show="this.$store.state.loginStatus"></login>
     <homeList></homeList>
+    <div class="fly">
+      <fly></fly>
+    </div>
   </div>
   </div>
 </template>
@@ -10,11 +21,18 @@
 // import Login from '../components/Login.vue'
 const login = () => import('@/components/home/Login.vue')
 const homeList = () => import('@/components/home/HomeList.vue')
+const fly = () => import('@/components/plugInUnit/FlyBox.vue')
 export default {
-  name: 'Home',
-  components: { login, homeList },
+  name: 'home',
+  components: { login, homeList, fly },
   data() {
-    return {}
+    return {
+      status: true
+    }
+  },
+  methods: {},
+  mounted() {
+    console.log(this.$store.state.loginStatus)
   }
 }
 </script>
