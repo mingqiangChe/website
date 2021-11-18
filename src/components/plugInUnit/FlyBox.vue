@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2021-11-18 15:29:42
  * @LastEditors: sueRimn
- * @LastEditTime: 2021-11-18 15:42:35
+ * @LastEditTime: 2021-11-18 22:44:46
 -->
 <!-- 小飞机 -->
 <template>
@@ -61,6 +61,7 @@ export default {
   position: fixed;
   right: 15%;
   bottom: 20%;
+  z-index: 98;
   // transform: translate(-50%, -50%);
 }
 
@@ -84,7 +85,7 @@ export default {
   height: 56px;
   border-radius: 18px;
   /* background-color: #302e37; */
-  background-color: red;
+  background-color: #00cd00;
 }
 
 .cockpit::after {
@@ -131,7 +132,7 @@ export default {
   left: -86px;
   z-index: 2;
   overflow: hidden;
-  background-color: #a299ab;
+  background-color: #00cd00;
   opacity: 0.12;
   transform: scaleY(0.075);
 }

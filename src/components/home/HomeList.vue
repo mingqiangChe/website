@@ -24,7 +24,7 @@
       </div>
       <div class="main-five" @click="pushContact">
         <img src="@/assets/touIcon.png" alt="">
-        联系
+        1432223
       </div>
     </el-card>
   </div>
@@ -87,17 +87,19 @@ export default {
   border-radius: 8px;
   animation: icon 4s linear infinite;
   box-shadow: 2px 2px 10px #909090;
+  
   overflow: hidden;
   .catalogue {
     width: 306px;
     box-sizing: border-box;
     padding: 5px 0 5px 8px;
     font-size: 34px;
-    color: black;
+    color: #0b0505;
     font-weight: bolder;
     text-align: left;
-    background-color: #ededed;
-    opacity: 0.8;
+    background-color: #040101;
+    // opacity: 0.8;
+    font-weight: 400;
     img {
       padding-top: 10px;
       box-sizing: border-box;
@@ -120,7 +122,8 @@ export default {
   .main-three:hover,
   .main-four:hover,
   .main-five:hover {
-    background-color: #fff5f5;
+    background-color: blue;
+    color: chartreuse;
   }
   @keyframes icon {
     0% {

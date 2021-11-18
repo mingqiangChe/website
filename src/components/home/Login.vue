@@ -42,7 +42,7 @@ export default {
     //这里存放数据
     return {
       // imgSrc: 'https://thomasche-1306205594.cos.ap-shanghai.myqcloud.com/website/012A6601.jpg'
-      title: 'start',
+      title: 'start'
     }
   },
   //监听属性 类似于data概念
