@@ -93,17 +93,6 @@ export default {
     box-sizing: border-box;
     animation: icon 6s linear infinite;
     .txt {
-      // margin: 50px auto;
-      // font-size: 54px;
-      // font-weight: bold;
-      // text-align: center;
-      // text-transform: uppercase;
-      // color: transparent;
-      // background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
-      // background-size: cover;
-      // background-position: center center;
-      // -webkit-background-clip: text;
-      // animation: huerotate 3s infinite;
     }
     @keyframes huerotate {
       100% {
